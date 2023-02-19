@@ -1,4 +1,4 @@
-package com.example.springexam.database.entity;
+package ru.example.springexam.database.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.PostLoad;

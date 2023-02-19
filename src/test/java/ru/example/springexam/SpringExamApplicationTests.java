@@ -1,14 +1,14 @@
-package com.example.springexam;
+package ru.example.springexam;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.springexam.database.entity.Employee;
-import com.example.springexam.database.repository.EmployeeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import ru.example.springexam.database.entity.Employee;
+import ru.example.springexam.database.repository.EmployeeRepository;
 
 @SpringBootTest
 @Slf4j

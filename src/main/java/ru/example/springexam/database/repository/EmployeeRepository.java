@@ -1,7 +1,7 @@
-package com.example.springexam.database.repository;
+package ru.example.springexam.database.repository;
 
-import com.example.springexam.database.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import ru.example.springexam.database.entity.Employee;
 
 //@Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {

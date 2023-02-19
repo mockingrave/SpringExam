@@ -1,4 +1,4 @@
-package com.example.springexam.config;
+package ru.example.springexam.config;
 
 //@Configuration
 public class MainConfig {
