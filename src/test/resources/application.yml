@@ -1,6 +1,7 @@
 logging:
   level:
     root: warn
+    ru.example.springexam.update.entity.base: info
     ru.example.springexam.update.service: info
 
 spring:

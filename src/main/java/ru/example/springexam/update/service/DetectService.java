@@ -15,13 +15,12 @@ public class DetectService {
     private final VehicleService vehicleService;
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void detectUpdate(Vehicle vehicle){
+    public void detectUpdate(Vehicle updatedVehicle){
 
-        var oldValue = vehicleService.getById(vehicle.getId());
-        var newValue = vehicle;
+        var oldValue = vehicleService.getById(updatedVehicle.getId());
 
         log.info("Old Entity: {}", oldValue);
-        log.info("New Entity: {}", newValue);
+        log.info("New Entity: {}", updatedVehicle);
     }
 
 

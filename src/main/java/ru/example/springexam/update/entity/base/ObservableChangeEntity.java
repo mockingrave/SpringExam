@@ -34,8 +34,8 @@ public abstract class ObservableChangeEntity extends BaseEntity implements Seria
 
     @PostUpdate
     public void postUpdate() {
-        log.warn("Old Entity: {}", sourceData);
-        log.warn("New Entity: {}", this);
+        log.info("Old Entity: {}", sourceData);
+        log.info("New Entity: {}", this);
     }
 
 

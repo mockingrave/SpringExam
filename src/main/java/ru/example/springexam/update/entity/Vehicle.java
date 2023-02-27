@@ -1,6 +1,8 @@
 package ru.example.springexam.update.entity;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.PositiveOrZero;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,8 +17,10 @@ import ru.example.springexam.update.entity.base.BaseEntity;
 @DynamicUpdate
 public class Vehicle extends BaseEntity {
 
+    @NotEmpty
     private String name;
 
+    @PositiveOrZero
     private Integer mileage;
 
 }
