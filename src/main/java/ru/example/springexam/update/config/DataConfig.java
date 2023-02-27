@@ -1,11 +1,10 @@
-package ru.example.springexam;
+package ru.example.springexam.update.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement()
-public class MainConfig {
-
+public class DataConfig {
 
 }

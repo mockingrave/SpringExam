@@ -9,7 +9,8 @@ spring:
   datasource:
     embedded-database-connection: h2
 
+#  autoconfigure.exclude: com.example.mylibrary.autoconfigure.LibAutoConfiguration
 
-
-
-
+#config.enable: bfpp
+#config.enable: import
+#config.enable: scan
