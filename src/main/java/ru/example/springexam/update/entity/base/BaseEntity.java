@@ -1,4 +1,4 @@
-package ru.example.springexam.database.entity;
+package ru.example.springexam.update.entity.base;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +8,9 @@ import javax.persistence.MappedSuperclass;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Data
 @SuperBuilder
 @NoArgsConstructor

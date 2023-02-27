@@ -1,18 +1,15 @@
+logging:
+  level:
+    root: info
 
 spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-    show-sql: true
   datasource:
     embedded-database-connection: h2
-  sql:
-    init:
-      mode: always
 
 
 
-logging:
-  level:
-    root: info
+
 
