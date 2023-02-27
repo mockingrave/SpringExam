@@ -1,4 +1,4 @@
-package ru.example.springexam.database.entity;
+package ru.example.springexam.update.entity.base;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -7,9 +7,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PostLoad;
 import javax.persistence.PostUpdate;
@@ -25,15 +22,10 @@ import lombok.extern.slf4j.Slf4j;
 @SuperBuilder
 @NoArgsConstructor
 @MappedSuperclass
-public abstract class BaseEntity implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public abstract class ObservableChangeEntity extends BaseEntity implements Serializable {
 
     @Transient
-    private BaseEntity sourceData;
-
+    private ObservableChangeEntity sourceData;
 
     @PostLoad
     public void afterLoad() throws IOException, ClassNotFoundException {
@@ -42,18 +34,18 @@ public abstract class BaseEntity implements Serializable {
 
     @PostUpdate
     public void postUpdate() {
-        log.info("Old Entity: {}", sourceData);
-        log.info("New Entity: {}", this);
+        log.warn("Old Entity: {}", sourceData);
+        log.warn("New Entity: {}", this);
     }
 
 
-    public BaseEntity cloneObject() throws IOException, ClassNotFoundException {
+    public ObservableChangeEntity cloneObject() throws IOException, ClassNotFoundException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(this);
         ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
         ObjectInputStream ois = new ObjectInputStream(bais);
-        return (BaseEntity) ois.readObject();
+        return (ObservableChangeEntity) ois.readObject();
     }
 
 }

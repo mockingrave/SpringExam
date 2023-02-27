@@ -1,0 +1,9 @@
+logging:
+  level:
+    root: warn
+    ru.example.springexam.update.service: info
+
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    show-sql: true
